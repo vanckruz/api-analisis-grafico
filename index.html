@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="timeWear">
+	<head>
+		<meta charset="utf-8" />
+		<title>Tyme</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+		<link rel="stylesheet" type="text/css" href="vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="vendor/vis/vis.min.css">
+		<link rel="stylesheet" type="text/css" href="css/results.css">
+	</head>
+	<body ng-controller="main">
+		<div class="container">
+			<div class="row mb-1em">			
+				<div class="col-lg-4 col-md-4 col-xs-12">
+					<img src="img/logo.png" class="img img-responsive">
+				</div>
+			
+				<div class="col-lg-8 col-md-8 col-xs-12">
+					<h1>Tyme Wear Data Analyzer</h1>
+					<p>BREATH BASED YOGA</p>
+					<p>SCIENCE OF ATHLETIC RECOVERY AND WELLBEING</p>
+				</div>	
+			</div>		
+
+			<div class="row">
+
+				<div class="col-xs-12">
+					<p class="text-justify">
+					Here is a summary of some of the science we talked about and your personal results from the practices.
+					</p>
+					<p class="text-justify">
+						Slowing breathing down to <b>6 breaths per minute</b> or less is when the Relaxation System
+	(Parasympathetic Nervous System) is at its most active and the Stress System (Sympathetic
+	Nervous System) is least active. Sustaining <b>high Parasympathetic Nervous System activity</b>
+	for at least <b>15 minutes - about 100 breaths - per day</b> results in the following benefits:
+					</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-xs-12 centeredBox">
+					<p>BENEFITS</p>
+				</div>
+				<div class="col-lg-8 col-md-8 col-xs-12">
+					<ul>
+						<li>Reduces stress hormones in your blood</li>
+						<li>Improves oxygen delivery to your muscles</li>
+						<li>Increases bodies threshold for elevated CO2
+	 levels which increases lactic threshold</li>
+						<li>Lowers your resting heart rate and stabilize your
+	 blood pressure</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="lineTagTitle">
+					  <span class="textTagCenter">
+					  	Select the file to be scanned
+					  </span>
+					</div>
+					<!-- <form id="SignalProcessingForm" enctype="multipart/form-data" action="/graphics" method="post"> -->
+					<form id="SignalProcessingForm" enctype="multipart/form-data">
+						<input type="file" name="file" class="form-control">
+						<p class="alert alert-danger" ng-show="msg">Please select a text file with a valid format</p>
+						<!-- <button type="submit" class="btn btn-primary btn-lg right"> -->
+						<button type="submit" class="btn btn-primary btn-lg right" ng-click="analyze()">
+							<span class="glyphicon glyphicon-stats"></span> Scan
+						</button>
+					</form>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="container" ng-show="results">			
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="lineTagTitle">
+					  <span class="textTagCenter">
+					    YOUR RESULTS
+					  </span>
+					</div>
+				</div>
+
+				<div  class="col-xs-12">
+					<vis-graph2d data="data" options="options"></vis-graph2d>
+				</div>
+			</div>
+		</div>
+			<!--<div class="row">
+				<div class="col-lg-4 col-md-4 col-xs-12 text-center">
+					<span class="numberBig blueTheme">23 <span>Minutes</span></span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-xs-12 text-center">
+					<span class="numberBig blueTheme">74%</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-xs-12 text-center">
+					<span class="numberBig yellowTheme">23%</span>
+				</div>
+			</div>	 -->
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="lineTagTitle">
+					  <span class="textTagCenter">
+					    STAY IN TOUCH
+					  </span>
+					</div>
+				</div>
+			</div>	
+
+			<div id="result" class="row">
+				<div class="col-lg-6 col-md-6 col-xs-12 text-center">
+					<p>arnar@tymewear.com</p>
+				</div>
+				<div class="col-lg-6 col-md-6 col-xs-12 text-center">
+					<p>www.tymewear.com</p>
+				</div>
+			</div>
+		</div>	
+
+		<div class="loading" ng-show="loading">    	
+		    <div class="centrado">
+		        <i class="fa-li fa fa-spinner fa-spin" aria-hidden="true"></i>			
+		    </div>
+		</div>
+
+		<script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="vendor/vis/vis.min.js"></script>
+		<script type="text/javascript" src="vendor/angular-vis.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>

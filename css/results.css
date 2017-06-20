@@ -1,0 +1,27 @@
+/* *:not(h1) */
+*{font-family: 'Roboto', sans-serif;color: #565956;}
+h1{font-family: 'Roboto', sans-serif;color: #565956;font-weight: 800;}
+b{color: #565956;}
+p,li{font-size: 1.5em;}
+.clear{clear:both;}
+.overflow-h{overflow:hidden;}
+.numberBig{font-size: 4em;font-weight: bold;}
+.numberBig span{font-size: 0.6em;color: inherit;}
+.lineTagTitle{width: 100%; height: 20px;margin:3em 0; border-bottom: 1px solid #808280; text-align: center;}
+.lineTagTitle .textTagCenter{font-size: 34px;font-weight:800;color: #808280;font-weight: bold;background-color: #FFF; padding: 0 1em;}
+.centeredBox{position:relative;height: auto;min-height:150px;}
+.centeredBox p{position:absolute;width:40%;height:40%;margin:auto;top:0;bottom:0;left:0;right:0;color: #808280;font-size: 2em;font-weight:bold;}
+.blueTheme{color: #0CC4FF;}
+.yellowTheme{color: #F9BF00;}
+.mb-1em{margin-bottom: 1em;}
+.left{float: left;}
+.right{float: right;}
+button span{color: #FFF;}
+.loading{position: fixed; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 100; top: 0; left: 0; }
+.loading .centrado{position: absolute;top: 0;left: 0;bottom: 0;right: 0;width: 60%;margin: auto;height: 70px; text-align: center;}
+.loading .centrado i.fa-li.fa.fa-spinner.fa-spin{font-size: 4em;position: relative;left: 0;color: #FFF;}
+.input-alert{border: 1px solid red;}
+#SignalProcessingForm input[name="file"]{margin-bottom: 1em;}
+@media screen and (max-width: 768px){
+	#SignalProcessingForm input[name="file"]{margin:7em 0 1em 0 !important;}
+}
